@@ -3,4 +3,15 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+
+    <color name="apartment_black">#de000000</color>
+    <color name="apartment_gray_50">#fafafa</color>
+    <color name="apartment_gray_50_a600">#99fafafa</color>
+    <color name="apartment_green_300">#6dc790</color>
+    <color name="apartment_green_500">#49bb79</color>
+    <color name="apartment_green_700">#005d2b</color>
+    <color name="apartment_green_900">#1a231e</color>
+    <color name="apartment_white">#deffffff</color>
+    <color name="apartment_yellow_300">#f8f99f</color>
+    <color name="apartment_yellow_500">#ffff63</color>
 </resources>

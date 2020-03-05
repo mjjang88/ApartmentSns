@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ApartmentSNS</string>
+
+    <string name="my_favorite_title">My Favorite</string>
+    <string name="apartment_list_title">Apartment List</string>
+
 </resources>

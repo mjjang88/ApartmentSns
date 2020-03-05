@@ -7,5 +7,29 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    
+    <style name="Base.Tyeme.Apartment" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/apartment_green_500</item>
+        <item name="colorOnPrimary">@color/apartment_yellow_500</item>
+        <item name="colorPrimaryDark">@color/apartment_green_700</item>
+        <item name="colorOnSurface">@color/apartment_black</item>
+        <item name="colorAccent">@color/apartment_green_700</item>
+        <item name="colorSurface">@color/apartment_gray_50</item>
+        <item name="colorSecondary">@color/apartment_yellow_500</item>
+        <item name="android:colorBackground">@color/apartment_green_500</item>
+    </style>
+
+    <style name="Theme.Apartment" parent="Base.Tyeme.Apartment"/>
+
+    <style name="Theme.Apartment.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.Apartment.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar"/>
+
+    <style name="TextAppearance.Apartment.Toolbar.Text" parent="TextAppearance.MaterialComponents.Headline5" >
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
 
 </resources>
