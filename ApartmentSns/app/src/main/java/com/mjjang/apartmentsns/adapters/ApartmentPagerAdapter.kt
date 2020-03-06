@@ -3,13 +3,11 @@ package com.mjjang.apartmentsns.adapters
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 
-const val MY_FAVORITE_PAGE_INDEX = 0
-const val APARTMENT_LIST_PAGE_INDEX = 1
+const val APARTMENT_LIST_PAGE_INDEX = 0
 
 class ApartmentPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
 
     private val tabFragmentsCreators: Map<Int, () -> Fragment> = mapOf(
-        MY_FAVORITE_PAGE_INDEX to { MyFavoriteFragment() },
         APARTMENT_LIST_PAGE_INDEX to { ApartmentListFragment() }
     )
 

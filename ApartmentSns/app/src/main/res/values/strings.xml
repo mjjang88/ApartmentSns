@@ -4,4 +4,6 @@
     <string name="my_favorite_title">My Favorite</string>
     <string name="apartment_list_title">Apartment List</string>
 
+    <string name="a11y_apartment_item_image">Picture of apartment</string>
+
 </resources>

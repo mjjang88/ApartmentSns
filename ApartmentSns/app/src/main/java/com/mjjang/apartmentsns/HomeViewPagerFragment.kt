@@ -37,7 +37,6 @@ class HomeViewPagerFragment : Fragment() {
 
     private fun getTabIcon(position: Int): Int {
         return when (position) {
-            MY_FAVORITE_PAGE_INDEX -> R.drawable.tab_selector
             APARTMENT_LIST_PAGE_INDEX -> R.drawable.tab_selector
             else -> throw IndexOutOfBoundsException()
         }
@@ -45,7 +44,6 @@ class HomeViewPagerFragment : Fragment() {
 
     private fun getTabTitle(position: Int): String? {
         return when (position) {
-            MY_FAVORITE_PAGE_INDEX -> getString(R.string.my_favorite_title)
             APARTMENT_LIST_PAGE_INDEX -> getString(R.string.apartment_list_title)
             else -> null
         }
