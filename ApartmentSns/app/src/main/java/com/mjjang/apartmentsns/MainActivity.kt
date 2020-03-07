@@ -9,6 +9,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView<ActivityMainBinding>(R.layout.activity_main)
+        setContentView<ActivityMainBinding>(this, R.layout.activity_main)
     }
 }
