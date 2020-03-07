@@ -1,14 +1,6 @@
 <resources>
-
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-    </style>
     
-    <style name="Base.Tyeme.Apartment" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Base.Theme.Apartment" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">@color/apartment_green_500</item>
         <item name="colorOnPrimary">@color/apartment_yellow_500</item>
         <item name="colorPrimaryDark">@color/apartment_green_700</item>
@@ -19,7 +11,7 @@
         <item name="android:colorBackground">@color/apartment_green_500</item>
     </style>
 
-    <style name="Theme.Apartment" parent="Base.Tyeme.Apartment"/>
+    <style name="Theme.Apartment" parent="Base.Theme.Apartment"/>
 
     <style name="Theme.Apartment.NoActionBar">
         <item name="windowActionBar">false</item>

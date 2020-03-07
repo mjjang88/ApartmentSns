@@ -42,7 +42,7 @@ class ApartmentAdapter : ListAdapter<Apartment, RecyclerView.ViewHolder>(Apartme
 private class ApartmentDiffCallback : DiffUtil.ItemCallback<Apartment>() {
 
     override fun areItemsTheSame(oldItem: Apartment, newItem: Apartment): Boolean {
-        return oldItem.apartmentId == newItem.apartmentId
+        return oldItem.name == newItem.name
     }
 
     override fun areContentsTheSame(oldItem: Apartment, newItem: Apartment): Boolean {
