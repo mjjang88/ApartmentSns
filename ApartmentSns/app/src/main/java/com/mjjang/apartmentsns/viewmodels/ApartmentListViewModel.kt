@@ -11,5 +11,5 @@ class ApartmentListViewModel internal constructor(
     private val savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
-    val apartments: LiveData<List<Apartment>> = apartmnetRepository.getApartments()
+    val apartments: LiveData<List<Apartment>> = apartmnetRepository.getApartmentList()
 }

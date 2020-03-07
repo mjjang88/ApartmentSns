@@ -8,8 +8,8 @@
             name="clickListener"
             type="android.view.View.OnClickListener" />
         <variable
-            name="apartment"
-            type="com.mjjang.apartmentsns.data.Apartment" />
+            name="post"
+            type="com.mjjang.apartmentsns.data.Post" />
     </data>
 
     <com.mjjang.apartmentsns.views.MaskedCardView
@@ -28,34 +28,33 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/apartment_item_image"
+                android:id="@+id/post_item_image"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/apartment_item_image_height"
                 android:contentDescription="@string/a11y_apartment_item_image"
                 android:scaleType="centerCrop"
-                app:imageFromUrl="@{apartment.imageUrl}"
+                app:imageFromUrl="@{post.src_url}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/apartment_item_title"
+                android:id="@+id/post_item_title"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/margin_normal"
                 android:layout_marginTop="@dimen/margin_normal"
-                android:text="@{apartment.name}"
+                android:text="@{post.title}"
                 android:textAppearance="?attr/textAppearanceListItem"
                 android:gravity="center_horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/apartment_item_image"
+                app:layout_constraintTop_toBottomOf="@id/post_item_image"
                 app:layout_constraintBottom_toBottomOf="parent"
-                tools:text="Hyosung Place"/>
+                tools:text="Title"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.mjjang.apartmentsns.views.MaskedCardView>
-
 
 </layout>

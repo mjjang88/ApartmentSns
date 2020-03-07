@@ -8,8 +8,11 @@ import androidx.room.Query
 
 @Dao
 interface ApartmentDao {
-    @Query("SELECT * FROM apartments ORDER BY name")
-    fun getApartment(): LiveData<List<Apartment>>
+    @Query("SELECT * FROM apartments ORDER BY id")
+    fun getApartmentList(): LiveData<List<Apartment>>
+
+    @Query("SELECT * FROM apartments WHERE id = :apartmentId")
+    fun getApartment(apartmentId: Int): LiveData<Apartment>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(apartments: List<Apartment>)

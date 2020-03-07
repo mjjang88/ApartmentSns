@@ -9,7 +9,9 @@ import com.google.gson.reflect.TypeToken
 import com.google.gson.stream.JsonReader
 import com.mjjang.apartmentsns.data.Apartment
 import com.mjjang.apartmentsns.data.AppDatabase
+import com.mjjang.apartmentsns.data.Post
 import com.mjjang.apartmentsns.utilities.APARTMENT_DATA_FILENAME
+import com.mjjang.apartmentsns.utilities.POST_DATA_FILENAME
 import kotlinx.coroutines.coroutineScope
 
 class SeedDatabaseWorker(
@@ -25,6 +27,18 @@ class SeedDatabaseWorker(
 
                     val database = AppDatabase.getInstance(applicationContext)
                     database.apartmentDao().insertAll(apartmentList)
+
+                    Result.success()
+                }
+            }
+
+            applicationContext.assets.open(POST_DATA_FILENAME).use { inputStream ->
+                JsonReader(inputStream.reader()).use { jsonReader ->
+                    val postType = object : TypeToken<List<Post>>() {}.type
+                    val postList: List<Post> = Gson().fromJson(jsonReader, postType)
+
+                    val database = AppDatabase.getInstance(applicationContext)
+                    database.postDao().insertAll(postList)
 
                     Result.success()
                 }

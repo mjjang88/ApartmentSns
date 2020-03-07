@@ -13,4 +13,9 @@
     <!-- Apartment List Header margin -->
     <dimen name="header_margin">24dp</dimen>
 
+    <dimen name="post_list_app_bar_height">278dp</dimen>
+
+    <dimen name="toolbar_elevation">5dp</dimen>
+
+    <dimen name="fab_bottom_padding">72dp</dimen>
 </resources>

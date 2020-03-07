@@ -4,7 +4,8 @@ class ApartmentRepository private constructor(
     private val apartmentDao : ApartmentDao
 ) {
 
-    fun getApartments() = apartmentDao.getApartment()
+    fun getApartmentList() = apartmentDao.getApartmentList()
+    fun getApartment(apartmentId: Int) = apartmentDao.getApartment(apartmentId)
 
     companion object {
         @Volatile private var instance: ApartmentRepository? = null

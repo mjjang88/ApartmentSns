@@ -6,7 +6,8 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "apartments")
 data class Apartment(
-    @PrimaryKey @ColumnInfo(name = "name") val name: String,
+    @PrimaryKey @ColumnInfo(name = "id") val id: Int,
+    val name: String,
     val description: String,
     val imageUrl: String = ""
 ) {

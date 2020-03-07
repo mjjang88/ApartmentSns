@@ -11,10 +11,11 @@ import androidx.work.WorkManager
 import com.mjjang.apartmentsns.utilities.DATABASE_NAME
 import com.mjjang.apartmentsns.workers.SeedDatabaseWorker
 
-@Database(entities = [Apartment::class], version = 1, exportSchema = false)
+@Database(entities = [Apartment::class, Post::class], version = 1, exportSchema = false)
 @TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
     abstract  fun apartmentDao(): ApartmentDao
+    abstract  fun postDao(): PostDao
 
     companion object {
 

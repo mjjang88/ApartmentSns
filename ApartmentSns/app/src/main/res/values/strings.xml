@@ -6,4 +6,8 @@
 
     <string name="a11y_apartment_item_image">Picture of apartment</string>
 
+    <string name="post_list_image_content_description">Image of apartment</string>
+
+    <string name="post_list_title">Post list</string>
+
 </resources>

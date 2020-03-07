@@ -7,14 +7,13 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.observe
-import com.mjjang.apartmentsns.adapters.ApartmentAdapter
+import com.mjjang.apartmentsns.adapters.ApartmentListAdapter
 import com.mjjang.apartmentsns.databinding.FragmentApartmentListBinding
 import com.mjjang.apartmentsns.utilities.InjectorUtils
 import com.mjjang.apartmentsns.viewmodels.ApartmentListViewModel
 
 class ApartmentListFragment : Fragment() {
 
-    // TODO: 구현 필요.
     private val viewModel: ApartmentListViewModel by viewModels {
         InjectorUtils.provideApartmentListViewModelFactory(this)
     }
@@ -27,7 +26,7 @@ class ApartmentListFragment : Fragment() {
         val binding = FragmentApartmentListBinding.inflate(inflater, container, false)
         context ?: return binding.root
 
-        val adapter = ApartmentAdapter()
+        val adapter = ApartmentListAdapter()
         binding.apartmentList.adapter = adapter
         subscribeUi(adapter)
 
@@ -35,7 +34,7 @@ class ApartmentListFragment : Fragment() {
         return binding.root
     }
 
-    private fun subscribeUi(adapter: ApartmentAdapter) {
+    private fun subscribeUi(adapter: ApartmentListAdapter) {
         viewModel.apartments.observe(viewLifecycleOwner) { apartments ->
             adapter.submitList(apartments)
         }

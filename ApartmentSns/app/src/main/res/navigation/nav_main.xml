@@ -9,6 +9,24 @@
         android:name="com.mjjang.apartmentsns.HomeViewPagerFragment"
         tools:layout="@layout/fragment_view_pager">
 
+        <action
+            android:id="@+id/action_view_pager_fragment_to_post_list_fragment"
+            app:destination="@id/post_list_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/post_list_fragment"
+        android:name="com.mjjang.apartmentsns.PostListFragment"
+        android:label="@string/post_list_title"
+        tools:layout="@layout/fragment_post_list">
+        <argument
+            android:name="apartmentId"
+            app:argType="integer" />
     </fragment>
 
 </navigation>
