@@ -58,9 +58,7 @@
                     android:layout_height="?attr/actionBarSize"
                     android:background="@android:color/transparent"
                     app:titleTextColor="?attr/colorOnSurface"
-                    app:layout_collapseMode="pin"
-                    app:contentInsetStartWithNavigation="0dp"
-                    app:navigationIcon="@drawable/ic_back_black_foreground" />
+                    app:layout_collapseMode="pin" />
 
             </com.google.android.material.appbar.CollapsingToolbarLayout>
 
