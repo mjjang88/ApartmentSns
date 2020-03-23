@@ -8,7 +8,7 @@ import androidx.room.Query
 
 @Dao
 interface ApartmentDao {
-    @Query("SELECT * FROM apartments ORDER BY id")
+    @Query("SELECT * FROM apartments ORDER BY name asc")
     fun getApartmentList(): LiveData<List<Apartment>>
 
     @Query("SELECT * FROM apartments WHERE id = :apartmentId")
