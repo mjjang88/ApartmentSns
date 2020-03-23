@@ -15,7 +15,7 @@ import java.util.*
     indices = arrayOf(Index(value = ["apartment_id"]))
 )
 data class Post (
-    val apartment_id: Int,
+    val apartment_id: String,
     @PrimaryKey val post_id: Int,
     val title: String,
     val writer: String,

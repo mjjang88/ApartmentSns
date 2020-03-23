@@ -16,7 +16,7 @@ class ApartmentRepository private constructor(
         refreshApartment()
         return apartmentDao.getApartmentList()
     }
-    fun getApartment(apartmentId: Int) = apartmentDao.getApartment(apartmentId)
+    fun getApartment(apartmentId: String) = apartmentDao.getApartment(apartmentId)
 
     companion object {
         @Volatile private var instance: ApartmentRepository? = null

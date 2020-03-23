@@ -29,7 +29,7 @@ object InjectorUtils {
 
     fun providePostListViewModelFactory(
         fragment: Fragment,
-        apartmentId: Int
+        apartmentId: String
     ): PostListViewModelFactory {
         val apartmentRepository = getApartmentRepository(fragment.requireContext())
         val postRepository = getPostRepository(fragment.requireContext())

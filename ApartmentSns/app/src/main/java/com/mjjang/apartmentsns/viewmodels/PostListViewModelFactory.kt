@@ -11,7 +11,7 @@ import com.mjjang.apartmentsns.data.PostRepository
 class PostListViewModelFactory(
     private val apartmentRepository: ApartmentRepository,
     private val postRepository: PostRepository,
-    private val apartmentId: Int,
+    private val apartmentId: String,
     owner: SavedStateRegistryOwner,
     defaultArgs: Bundle? = null
 ) : AbstractSavedStateViewModelFactory(owner, defaultArgs){

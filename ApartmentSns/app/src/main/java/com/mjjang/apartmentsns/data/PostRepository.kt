@@ -11,7 +11,7 @@ class PostRepository private constructor(
     private val postDao : PostDao
 ) {
 
-    fun getPosts(apartmentId: Int) = postDao.getPosts(apartmentId)
+    fun getPosts(apartmentId: String) = postDao.getPosts(apartmentId)
 
     companion object {
         @Volatile private var instance: PostRepository? = null

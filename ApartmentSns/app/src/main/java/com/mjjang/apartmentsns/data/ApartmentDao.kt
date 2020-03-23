@@ -12,7 +12,7 @@ interface ApartmentDao {
     fun getApartmentList(): LiveData<List<Apartment>>
 
     @Query("SELECT * FROM apartments WHERE id = :apartmentId")
-    fun getApartment(apartmentId: Int): LiveData<Apartment>
+    fun getApartment(apartmentId: String): LiveData<Apartment>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(apartments: List<Apartment>)

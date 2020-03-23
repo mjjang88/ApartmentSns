@@ -11,7 +11,7 @@ import com.mjjang.apartmentsns.data.PostRepository
 class PostListViewModel internal constructor(
     apartmentRepository: ApartmentRepository,
     postRepository: PostRepository,
-    private val apartmentId: Int,
+    private val apartmentId: String,
     private val savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
