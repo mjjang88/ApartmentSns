@@ -4,13 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.google.android.material.tabs.TabLayoutMediator
 import com.mjjang.apartmentsns.adapters.APARTMENT_LIST_PAGE_INDEX
 import com.mjjang.apartmentsns.adapters.ApartmentPagerAdapter
 import com.mjjang.apartmentsns.databinding.FragmentViewPagerBinding
+import com.mjjang.apartmentsns.manager.KeyboardManager
 
 class HomeViewPagerFragment : Fragment() {
 
@@ -32,7 +32,20 @@ class HomeViewPagerFragment : Fragment() {
 
         (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
 
-        binding.btnSearch.setOnClickListener { Toast.makeText(context, "test", Toast.LENGTH_LONG).show() }
+        binding.btnSearch.setOnClickListener {
+            binding.layoutTitle.visibility = View.GONE
+            binding.layoutSearch.visibility = View.VISIBLE
+
+            binding.editSearch.requestFocus()
+            KeyboardManager.showKeyboard(context, binding.editSearch)
+        }
+
+        binding.btnClear.setOnClickListener {
+            binding.layoutSearch.visibility = View.GONE
+            binding.layoutTitle.visibility = View.VISIBLE
+
+            KeyboardManager.hideKeyboard(context, binding.editSearch)
+        }
 
         return binding.root
     }
