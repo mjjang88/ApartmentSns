@@ -12,9 +12,13 @@ class ApartmentRepository private constructor(
     private val apartmentDao : ApartmentDao
 ) {
 
-    fun getApartmentList() : LiveData<List<Apartment>> {
-        refreshApartment()
-        return apartmentDao.getApartmentList()
+    fun getApartmentList(searchWord: String?) : LiveData<List<Apartment>> {
+        return if (searchWord == null) {
+            refreshApartment()
+            apartmentDao.getApartmentList()
+        } else {
+            apartmentDao.getApartmentList(searchWord)
+        }
     }
     fun getApartment(apartmentId: String) = apartmentDao.getApartment(apartmentId)
 

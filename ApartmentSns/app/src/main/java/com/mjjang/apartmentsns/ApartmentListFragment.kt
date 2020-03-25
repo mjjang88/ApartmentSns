@@ -43,6 +43,7 @@ class ApartmentListFragment : Fragment() {
             }
             false
         }
+
         return binding.root
     }
 

@@ -1,16 +1,21 @@
 package com.mjjang.apartmentsns
 
 import android.os.Bundle
+import android.text.Editable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import com.google.android.material.tabs.TabLayoutMediator
 import com.mjjang.apartmentsns.adapters.APARTMENT_LIST_PAGE_INDEX
 import com.mjjang.apartmentsns.adapters.ApartmentPagerAdapter
+import com.mjjang.apartmentsns.data.ApartmentRepository
 import com.mjjang.apartmentsns.databinding.FragmentViewPagerBinding
+import com.mjjang.apartmentsns.manager.AppPreference
 import com.mjjang.apartmentsns.manager.KeyboardManager
+import com.mjjang.apartmentsns.viewmodels.ApartmentListViewModel
 
 class HomeViewPagerFragment : Fragment() {
 
@@ -45,6 +50,10 @@ class HomeViewPagerFragment : Fragment() {
             binding.layoutTitle.visibility = View.VISIBLE
 
             KeyboardManager.hideKeyboard(context, binding.editSearch)
+        }
+
+        binding.editSearch.addTextChangedListener { text: Editable? ->
+            AppPreference.setSearchWord(text.toString())
         }
 
         return binding.root

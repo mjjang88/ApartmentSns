@@ -11,6 +11,9 @@ interface ApartmentDao {
     @Query("SELECT * FROM apartments ORDER BY name asc")
     fun getApartmentList(): LiveData<List<Apartment>>
 
+    @Query("SELECT * FROM apartments WHERE name like '%' || :searchWord || '%' ORDER BY name asc")
+    fun getApartmentList(searchWord: String): LiveData<List<Apartment>>
+
     @Query("SELECT * FROM apartments WHERE id = :apartmentId")
     fun getApartment(apartmentId: String): LiveData<Apartment>
 
