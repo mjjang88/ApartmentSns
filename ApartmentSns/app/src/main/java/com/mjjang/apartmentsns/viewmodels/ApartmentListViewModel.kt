@@ -9,7 +9,6 @@ class ApartmentListViewModel internal constructor(
     private val savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
-    //val apartments: LiveData<List<Apartment>> = apartmnetRepository.getApartmentList(searchWord)
     val searchWord: MutableLiveData<String?> = MutableLiveData(null)
     val apartments: LiveData<List<Apartment>> = Transformations.switchMap(searchWord) { id ->
         apartmnetRepository.getApartmentList(id)

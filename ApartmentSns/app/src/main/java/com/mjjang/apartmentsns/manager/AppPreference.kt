@@ -4,7 +4,7 @@ import android.content.SharedPreferences
 import android.preference.PreferenceManager
 
 object AppPreference {
-    private val preference: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(App.context())
+    private val preference: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(App.applicationContext())
 
     private val SEARCH_WORD = "search_word"
 
@@ -28,13 +28,5 @@ object AppPreference {
             Long::class -> preference.getLong(key, defaultValue as? Long ?: -1) as T?
             else -> throw UnsupportedOperationException("Not yet implemented")
         }
-    }
-
-    fun getSearchWord(): String? {
-        return get(SEARCH_WORD)
-    }
-
-    fun setSearchWord(word: String) {
-        set(SEARCH_WORD, word)
     }
 }

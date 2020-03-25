@@ -9,7 +9,7 @@ const val APARTMENT_LIST_PAGE_INDEX = 0
 class ApartmentPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
 
     private val tabFragmentsCreators: Map<Int, () -> Fragment> = mapOf(
-        APARTMENT_LIST_PAGE_INDEX to { ApartmentListFragment() }
+        APARTMENT_LIST_PAGE_INDEX to { ApartmentListFragment(fragment) }
     )
 
     override fun getItemCount(): Int {

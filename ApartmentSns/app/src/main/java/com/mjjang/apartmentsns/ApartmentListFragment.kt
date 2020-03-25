@@ -16,7 +16,7 @@ import com.mjjang.apartmentsns.manager.KeyboardManager
 import com.mjjang.apartmentsns.utilities.InjectorUtils
 import com.mjjang.apartmentsns.viewmodels.ApartmentListViewModel
 
-class ApartmentListFragment : Fragment() {
+class ApartmentListFragment(val _parentFragment: Fragment) : Fragment() {
 
     private val viewModel: ApartmentListViewModel by viewModels {
         InjectorUtils.provideApartmentListViewModelFactory(this)
@@ -42,6 +42,11 @@ class ApartmentListFragment : Fragment() {
                 MotionEvent.ACTION_MOVE -> {KeyboardManager.hideKeyboard(context, view)}
             }
             false
+        }
+
+        if (_parentFragment is HomeViewPagerFragment) {
+            _parentFragment.setSearchEditTextChangedListener { searchWord ->
+                viewModel.searchWord.postValue(searchWord) }
         }
 
         return binding.root

@@ -50,10 +50,11 @@ class HomeViewPagerFragment : Fragment() {
             binding.layoutTitle.visibility = View.VISIBLE
 
             KeyboardManager.hideKeyboard(context, binding.editSearch)
+            binding.editSearch.text = null
         }
 
         binding.editSearch.addTextChangedListener { text: Editable? ->
-            AppPreference.setSearchWord(text.toString())
+            mSearchEditTextChangedListener?.OnTextChanged(text.toString())
         }
 
         return binding.root
@@ -70,6 +71,19 @@ class HomeViewPagerFragment : Fragment() {
         return when (position) {
             APARTMENT_LIST_PAGE_INDEX -> getString(R.string.apartment_list_title)
             else -> null
+        }
+    }
+
+    interface searchEditTextChangedListener {
+        fun OnTextChanged(searchWord: String?)
+    }
+
+    private var mSearchEditTextChangedListener: searchEditTextChangedListener? = null
+    fun setSearchEditTextChangedListener(listener: (String?) -> Unit) {
+        mSearchEditTextChangedListener = object : searchEditTextChangedListener {
+            override fun OnTextChanged(searchWord: String?) {
+                listener(searchWord)
+            }
         }
     }
 }

@@ -4,14 +4,15 @@ import android.app.Application
 import android.content.Context
 
 class App : Application() {
-    init {
+    lateinit var context: Context
+
+    init{
         instance = this
     }
 
     companion object {
         private var instance: App? = null
-
-        fun context() : Context {
+        fun applicationContext() : Context {
             return instance!!.applicationContext
         }
     }
