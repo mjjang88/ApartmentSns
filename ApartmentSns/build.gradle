@@ -35,6 +35,7 @@ buildscript {
         workVersion = '2.3.3'
         retrofitVersion = '2.6.2'
         converterGsonVersion = '2.6.0'
+        googleMapVersion = '17.0.0'
     }
 
     repositories {
