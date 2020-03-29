@@ -39,6 +39,8 @@ class PostListFragment : Fragment() {
         subscribeUi(adapter)
 
         setHasOptionsMenu(true)
+
+        binding.floatingBtnAddPost.setOnClickListener {  }
         return binding.root
     }
 
